@@ -444,7 +444,7 @@ async function allUser(req, res) {
         const numberOfUsers = await User.countDocuments();
 
         return res.status(200).json({
-            msg: "All Users",
+            msg: "All users",
             numberOfUsers,
             data: {
                 users,

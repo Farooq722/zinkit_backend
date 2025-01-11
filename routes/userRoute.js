@@ -15,6 +15,6 @@ router.put("/forget-password", forgetPassword);
 router.put("/verify-forget-password", verifyForgetPasswordOtp);
 router.put("/reset-password", resetPassword);
 router.post("/refresh", refreshToken1);
-router.get("/users", allUser);
+router.get("/users", allUser); // fetchs all users
 
 module.exports = router;
