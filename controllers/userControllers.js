@@ -139,7 +139,7 @@ async function loginController(req, res) {
 
         const accessToken1 = await accessToken(user._id);
         const refreshToken1 = await refreshToken(user._id);
-            
+
         const cookieOption = {
             httpOnly: true,
             secure: true,
@@ -437,6 +437,30 @@ async function refreshToken1(req, res) {
 
 }
 
+async function allUser(req, res) {
+
+    try {
+        const users = await User.find().select("name email status role");
+        const numberOfUsers = await User.countDocuments();
+
+        return res.status(200).json({
+            msg: "All Users",
+            numberOfUsers,
+            data: {
+                users,
+            }
+        })
+
+    } catch (err) {
+        return res.status(500).json({
+            msg: err.message || err,
+            error: true,
+            success: false
+        })
+    }
+}
+
+
 module.exports = {
     registerUser,
     verifyEmailController,
@@ -448,4 +472,5 @@ module.exports = {
     verifyForgetPasswordOtp,
     resetPassword,
     refreshToken1,
+    allUser
 }
