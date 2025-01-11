@@ -59,7 +59,7 @@ Welcome to the Zinkit Backend repository! This is the server-side code for the Z
 
 ### Authentication
 
-**POST /api/auth/register**
+**POST /api/user/register**
 - Registers a new user.
 - Request body:
   ```json
@@ -70,7 +70,7 @@ Welcome to the Zinkit Backend repository! This is the server-side code for the Z
   }
   ```
 
-**POST /api/auth/login**
+**POST /api/user/login**
 - Logs in an existing user.
 - Request body:
   ```json
@@ -80,7 +80,7 @@ Welcome to the Zinkit Backend repository! This is the server-side code for the Z
   }
   ```
 
-**PUT /api/auth/forget-password**
+**PUT /api/user/forget-password**
 - Initiates a password reset process.
 - Request body:
   ```json
@@ -89,10 +89,10 @@ Welcome to the Zinkit Backend repository! This is the server-side code for the Z
   }
   ```
 
-**PUT /api/auth/update**
+**PUT /api/user/update**
 - Updates user details based on requirements.
 
-**PUT /api/auth/reset-password**
+**PUT /api/user/reset-password**
 - Resets the user password.
 - Request body:
   ```json
@@ -103,7 +103,7 @@ Welcome to the Zinkit Backend repository! This is the server-side code for the Z
   }
   ```
 
-**PUT /api/auth/verify-forget-password**
+**PUT /api/user/verify-forget-password**
 - Verifies the OTP sent during the password reset process.
 - Request body:
   ```json
@@ -115,17 +115,20 @@ Welcome to the Zinkit Backend repository! This is the server-side code for the Z
 
 ### Other Endpoints
 
-**POST /api/auth/refresh**
+**POST /api/user/refresh**
 - Refreshes the authentication token.
 
-**POST /api/auth/verify-email**
+**POST /api/user/verify-email**
 - Verifies the user email address.
 
-**GET /api/auth/logout**
+**GET /api/user/logout**
 - Logs the user out.
 
-**PUT /api/auth/upload-avatar**
+**PUT /api/user/upload-avatar**
 - Uploads or updates the user avatar.
+
+**GET /api/user/users**
+- Get all users present in DB.
 
 ---
 
