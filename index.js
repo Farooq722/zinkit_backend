@@ -27,7 +27,7 @@ const port = 3000 || process.env.PORT;
 
 app.get("/", (req, res) => {
     res.json({
-        msg: "base route"
+        msg: "Backend is working fine"
     });
 });
 
